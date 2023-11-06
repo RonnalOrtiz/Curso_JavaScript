@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>getElementById vs. getElementsByTagName</title>
+  <title>Uso de getElementById vs. getElementsByTagName</title>
 </head>
 
 <body>
+  <h1><strong>Tema 0 Ejercicio 8:</strong><em>getElementById vs. getElementsByTagName</em></h1>
   <p id="parrafo1">Este es el primer párrafo.</p>
   <p id="parrafo2">Este es el segundo párrafo.</p>
   <p id="parrafo3">Este es el tercer párrafo.</p>
@@ -17,12 +18,12 @@
     <li>Elemento 3</li>
   </ul>
   <div id="resultado"></div>
-
+  <br> 
   <script>
     function getElementByIdExample() {
       var elemento = document.getElementById("parrafo2");
       // Imprime solo la etiqueta con id="parrafo2"
-      document.getElementById("resultado").textContent = "getElementById: " + elemento.textContent;
+      document.getElementById("resultado").innerHTML = "<strong>Resultado getElementById: </strong>" + "<br>" + elemento.textContent;
     }
 
     function getElementsByTagNameExample() {
@@ -38,7 +39,7 @@
         contenido += elementosUL[j].textContent + "<br>";
       }
       
-      document.getElementById("resultado").innerHTML = "getElementsByTagName: " + contenido;
+      document.getElementById("resultado").innerHTML = "<strong>Resultado getElementTagName: </strong>"+"<br>" + contenido ;
     }
   </script>
 
