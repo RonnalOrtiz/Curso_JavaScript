@@ -17,38 +17,34 @@
     <li>Elemento 2</li>
     <li>Elemento 3</li>
   </ul>
-
-  <input type="radio" name="option" id="getElementByIdRadio" onchange="getElementByIdExample()">
-  <label for="getElementByIdRadio">Usar getElementById</label><br>
-
-  <input type="radio" name="option" id="getElementsByTagNameRadio" onchange="getElementsByTagNameExample()">
-  <label for="getElementsByTagNameRadio">Usar getElementsByTagName</label><br>
   <div id="resultado"></div>
-  
+  <br> 
   <script>
     function getElementByIdExample() {
       var elemento = document.getElementById("parrafo2");
       // Imprime solo la etiqueta con id="parrafo2"
-      document.getElementById("resultado").innerHTML =  "<br>"+"<strong>Resultado getElementById: </strong>" + "<br>" + elemento.textContent;
+      document.getElementById("resultado").innerHTML = "<strong>Resultado getElementById: </strong>" + "<br>" + elemento.textContent;
     }
 
     function getElementsByTagNameExample() {
       var elementosP = document.getElementsByTagName("p");
       var elementosUL = document.getElementsByTagName("ul");
       var contenido = "";
-
+      
       for (var i = 0; i < elementosP.length; i++) {
         contenido += elementosP[i].textContent + "<br>";
       }
-
+      
       for (var j = 0; j < elementosUL.length; j++) {
         contenido += elementosUL[j].textContent + "<br>";
       }
-
-      document.getElementById("resultado").innerHTML = "<br>"+"<strong>Resultado getElementTagName: </strong>" + "<br>" + contenido;
+      
+      document.getElementById("resultado").innerHTML = "<strong>Resultado getElementTagName: </strong>"+"<br>" + contenido ;
     }
   </script>
 
+  <button onclick="getElementByIdExample()">Usar getElementById</button><br>
+  <button onclick="getElementsByTagNameExample()">Usar getElementsByTagName</button><br>
 </body>
 
 </html>
