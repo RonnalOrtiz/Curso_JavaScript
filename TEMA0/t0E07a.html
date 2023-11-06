@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Texto con Formato</title>
+  <style>
+    /* Estilo para el botón "Mostrar Texto" */
+    #mostrarTextoButton {
+      padding: 10px 20px;
+      background-color: #0074d9;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Estilo para los botones de formato */
+    .formatButton {
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    /* Estilo para el cuadro de texto */
+    #textoEntrada {
+      width: 50%;
+      height: 100px;
+      padding: 10px;
+      font-size: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+    <h1>Editor de Texto con Formato</h1>
+    
+    <div>
+        <textarea id="textoEntrada" placeholder="Escribe aquí">Generación TIC</textarea>
+    </div>
+    
+    <div>
+        <button id="mostrarTextoButton" onclick="mostrarTexto()">Mostrar Texto</button>
+    </div>
+    
+    <div>
+        <button class="formatButton" onclick="aplicarNegrita()">Negrita</button>
+        <button class="formatButton" onclick="aplicarCursiva()">Cursiva</button>
+        <button class="formatButton" onclick="aplicarSubrayado()">Subrayado</button>
+    </div>
+    
+    <div>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function mostrarTexto() {
+            var texto = document.getElementById("textoEntrada").value;
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = texto;
+        }
+
+        function aplicarNegrita() {
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "<strong>" + resultado.innerHTML + "</strong>";
+        }
+
+        function aplicarCursiva() {
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "<em>" + resultado.innerHTML + "</em>";
+        }
+
+        function aplicarSubrayado() {
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "<u>" + resultado.innerHTML + "</u>";
+        }
+    </script>
+</body>
+
+</html>

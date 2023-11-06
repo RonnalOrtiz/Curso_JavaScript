@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de Var,Let y Const</title>
+</head>
+
+<body>
+  <h1>Tema 1 Ejemplo 1</h1>
+  <h2>Ejemplo con var</h2>
+  <script>
+    function exampleVar() {
+      if (true) {
+        var x = 10;
+        console.log(x); // Se puede acceder a x aquí
+      }
+      console.log(x); // También se puede acceder a x aquí
+    }
+
+    exampleVar();
+    console.log(x); // x no es accesible fuera de la función si se declara con var
+  </script>
+
+  <h2>Ejemplo con let</h2>
+  <script>
+    function exampleLet() {
+      if (true) {
+        let y = 20;
+        console.log(y); // Se puede acceder a y aquí
+      }
+      console.log(y); // Error: y no está definido aquí
+    }
+
+    exampleLet();
+    console.log(y); // Error: y no está definido aquí
+  </script>
+
+  <h2>Ejemplo con const</h2>
+  <script>
+    function exampleConst() {
+      const z = 30;
+      console.log(z); // Se puede acceder a z aquí
+
+      // Intentando reasignar una constante, lo cual no es permitido
+      z = 40; // Esto arrojará un error: "Assignment to constant variable"
+    }
+
+    exampleConst();
+    console.log(z); // Error: z no está definido aquí
+  </script>
+
+</body>
+
+</html>

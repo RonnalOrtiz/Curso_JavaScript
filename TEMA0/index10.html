@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getElementById vs. getElementsByTagName</title>
+</head>
+
+<body>
+  <p id="parrafo1">Este es el primer párrafo.</p>
+  <p id="parrafo2">Este es el segundo párrafo.</p>
+  <p id="parrafo3">Este es el tercer párrafo.</p>
+  <ul>
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+  </ul>
+  <div id="resultado"></div>
+
+  <script>
+    function getElementByIdExample() {
+      var elemento = document.getElementById("parrafo2");
+      // Imprime solo la etiqueta con id="parrafo2"
+      document.getElementById("resultado").textContent = "getElementById: " + elemento.textContent;
+    }
+
+    function getElementsByTagNameExample() {
+      var elementosP = document.getElementsByTagName("p");
+      var elementosUL = document.getElementsByTagName("ul");
+      var contenido = "";
+      
+      for (var i = 0; i < elementosP.length; i++) {
+        contenido += elementosP[i].textContent + "<br>";
+      }
+      
+      for (var j = 0; j < elementosUL.length; j++) {
+        contenido += elementosUL[j].textContent + "<br>";
+      }
+      
+      document.getElementById("resultado").innerHTML = "getElementsByTagName: " + contenido;
+    }
+  </script>
+
+  <button onclick="getElementByIdExample()">Usar getElementById</button><br>
+  <button onclick="getElementsByTagNameExample()">Usar getElementsByTagName</button><br>
+</body>
+
+</html>

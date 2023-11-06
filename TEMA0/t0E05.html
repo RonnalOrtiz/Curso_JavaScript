@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo 5. Uso de innerHTML</title>
+  <style>
+    .custom-button {
+      width: 200px;
+      height: 50px;
+      background: #0074d9;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><strong>Tema 0 Ejercicio 5:</strong><em>Uso de innerHTML para manejar contenido</em></h1>
+  <h1>Descripción</h1>
+  <p>Con innerHTML se puede modificar el contenido en el html </p>
+  <hr>
+  <p id="miParrafo">Este es un párrafo original.</p>
+  <button class="custom-button" onclick="cambiarContenido()">Cambiar Contenido</button>
+  <button class="custom-button" onclick="restaurarContenido()">Restaurar Contenido</button>
+  <script>
+    var contenidoOriginal = "Este es un párrafo original";
+    var parrafo = document.getElementById("miParrafo");
+
+    function cambiarContenido() {
+      // Obtener el elemento de párrafo por su ID
+      var parrafo = document.getElementById("miParrafo");
+      // Cambiar el contenido del párrafo utilizando innerHTML
+      parrafo.innerHTML = "¡El contenido ha sido cambiado! Ahora este es un nuevo párrafo.";
+    }
+    function restaurarContenido() {
+      // Restaurar el contenido original del párrafo
+      parrafo.innerHTML = contenidoOriginal;
+    }
+
+  </script>
+</body>
+
+</html>

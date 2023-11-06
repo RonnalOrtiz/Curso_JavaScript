@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS03 Cursos de Generación TIC</title>
+</head>
+<body>
+    <h1>Tema 1 Ejemplo 3</h1>
+    <h1>Selecciona una opción:</h1>
+    <label for="opcion1">
+        <input type="radio" name="opcion" id="opcion1" onclick="mostrarCursos(1)"
+            title="Curso para niñas y niños de 8 a 12 años">
+        Opción 1: Curso para niñas y niños de 8 a 12 años
+    </label><br>
+
+    <label for="opcion2">
+        <input type="radio" name="opcion" id="opcion2" onclick="mostrarCursos(2)"
+            title="Curso para jóvenes de Décimo a Once grado">
+        Opción 2: Curso para jóvenes de Décimo a Once grado
+    </label><br>
+
+    <label for="opcion3">
+        <input type="radio" name="opcion" id="opcion3" onclick="mostrarCursos(3)"
+            title="Curso para personas de 18 Años en adelante">
+        Opción 3: Curso para personas de 18 Años en adelante
+    </label><br>
+
+    <div id="cursosMostrados"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Fecha y hora actual en Español</title>
+</head>
+<body>
+    <h2>Mi Ejemplo JavaScript en la Masterclass</h2>
+
+    <button type="button" onclick="mostrarFechaYHora()">
+       Clic para Fecha y Hora en Español.</button>
+
+    <p id="FechayHora"></p>
+
+    <script>
+        function mostrarFechaYHora() {
+            const fechaYHora = new Date();
+            const opciones = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true,
+                localeMatcher: 'best fit',
+            };
+            const fechaYHoraEnEspañol = fechaYHora.toLocaleString('es-ES', opciones);
+            document.getElementById('FechayHora').textContent = fechaYHoraEnEspañol;
+        }
+    </script>
+</body>
+</html>

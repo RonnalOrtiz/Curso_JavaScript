@@ -1,0 +1,23 @@
+body {
+  background-color: #c5c8b6; /* Fondo gris claro */
+}
+
+input[type="radio"] {
+  display: none; /* Oculta los input type radio */
+}
+
+label {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: blue; /* Color de fondo azul */
+  color: white; /* Color del texto blanco */
+  cursor: pointer;
+  border-radius: 15px;
+  width: 200px; 
+  text-align: center;  
+}
+
+input[type="radio"]:checked + label {
+  background-color: darkblue; /* Cambia el color al hacer clic */
+}

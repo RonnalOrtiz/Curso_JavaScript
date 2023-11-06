@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo 6. Manejo del DOM</title>
+</head>
+
+<body>
+  <div id="container">
+    <h1><strong>Tema 0 Ejercicio 6:</strong><em>Uso de métodos del DOM</em></h1>
+    <h1>Descripción</h1>
+    <p>En este ejemplo, se aplican los métodos <strong>createElement</strong>, <strong>removeChild</strong> y
+      <strong>textContent</strong></p>
+    <p>Se utiliza <strong>createElement</strong> para crear un nuevo elemento de lista (&lt;li&gt;)</p>
+    <p>Se utiliza el método <strong>removeChild</strong> para quitar el último elemento de la lista</p>
+    <p>Se utiliza <strong>textContent</strong> para el contenido de texto y dibujarlo en el DOM</p>
+    <hr>
+    <p>En el cuadro de texto escriba un contenido</p>
+    <p><em> Se valida si hay contenido para agregar o elementos para remover</em></p>
+    
+    <input type="text" id="textBox" placeholder="Ingrese texto">
+    <button id="btnAgregar" onclick="agregarElemento()">Agregar</button>
+    <button id="btnRemover" onclick="eliminarElemento()">Remover</button>
+    <!-- Este es el id para dibujar el elemento en el DOM -->
+    <ul id="list"></ul>
+  </div>
+
+  <script>
+    // Función para agregar un nuevo elemento a la lista
+    function agregarElemento() {
+      const lista = document.getElementById('list');
+      const textBox = document.getElementById('textBox');
+      const nuevoElemento = document.createElement('li');
+
+      // Verificar si el cuadro de texto está vacío antes de agregar un elemento
+      if (textBox.value.trim() !== '') {
+        nuevoElemento.textContent = textBox.value;
+        lista.appendChild(nuevoElemento);
+        textBox.value = ''; // Limpiar el cuadro de texto después de agregar
+      } else {
+        alert('El cuadro de texto está vacío. Por favor, ingrese texto.');
+      }
+    }
+
+    // Función para eliminar el último elemento de la lista
+    function eliminarElemento() {
+      const lista = document.getElementById('list');
+      const textBox = document.getElementById('textBox');
+      const ultimoElemento = lista.lastChild;
+
+      // Verificar si el cuadro de texto está vacío antes de intentar eliminar
+      if (textBox.value.trim() === '') {
+        if (ultimoElemento) {
+          lista.removeChild(ultimoElemento);
+        } else {
+          alert('No hay elementos para remover.');
+        }
+      } else {
+        alert('El cuadro de texto no está vacío. Por favor, elimine el texto antes de remover elementos.');
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de debilidad en el tipado en JavaScript</title>
+</head>
+<body>
+    <h1>Tema 1 Ejemplo 2</h1> 
+    <h2>Resultado en Consola</h2>
+    <script>
+    let numero = 10;
+    let texto = "Hola";
+    
+    let resultado = numero + texto;  // Intento de suma
+    
+    console.log(resultado);  // Imprimir el resultado en la consola
+    </script>
+    
+    <h2>Resultado en HTML</h2>
+    <p id="resultado"></p>
+    
+    <script>
+    let resultadoHTML = numero + texto;  // Intento de suma para mostrar en HTML
+    document.getElementById("resultado").innerText = resultadoHTML;  // Mostrar en el HTML
+    </script>
+    
+    </body>
+</html>

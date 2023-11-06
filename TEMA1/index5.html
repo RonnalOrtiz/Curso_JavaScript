@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de console en JavaScript</title>
+</head>
+
+<body>
+    <h1>Tema 1 Ejemplo 5</h1>
+    <script>
+        function imprimirMensajeConRetardo() {
+            for (let contador = 0; contador <= 7; contador++) {
+                setTimeout(function () {
+                    const mensaje = `Mensaje ${contador}`;
+                    console.log(mensaje);
+                    const p = document.createElement('p');
+                    p.textContent = mensaje;
+                    document.body.appendChild(p);
+                }, contador * 3000); // 3000 milisegundos (3 segundos) de retardo
+            }
+        }
+
+        imprimirMensajeConRetardo();
+
+    </script>
+
+</body>
+
+</html>

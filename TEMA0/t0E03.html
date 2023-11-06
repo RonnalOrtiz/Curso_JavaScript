@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T0 E03</title>
+</head>
+<!DOCTYPE html>
+
+<body>
+    <h1><strong>Tema 0 Ejercicio 3:</strong><em>Mensajes con alert</em></h1>
+    <h1>Descripción</h1>
+    <p><strong>alert</strong> es una función que se utiliza para mostrar un mensaje emergente o una ventana de
+        diálogo en el navegador web.<br>Este mensaje puede contener texto o información proporcionada como
+        argumento a la función alert.<br>La función alert se utiliza para comunicar información simple o
+        notificaciones
+        importantes al usuario, como mensajes<br>de error, advertencias o confirmaciones.
+    </p>
+    <hr>
+    <p>Haga clic en cada uno de los botones para ver varias formas de manejar los mensajes de alerta.</p>
+    <button id="boton1">Mensaje</button>
+    <button onclick="mostrarArrayEnAlert()">Mensajes Múltiples</button>
+    <input type="text" id="indiceInput" placeholder="Índice del elemento">
+    <button id="mensajeArray" onclick="mostrarElementoPorIndice()">Mensaje del Array</button>
+
+    <script>
+        alert("¡Hola, Generación TIC!");
+        const boton = document.getElementById('boton1');
+        const arrayDeCadenas = ["Elemento 1", "Elemento 2", "Elemento 3"];
+        // Agregamos un evento click al botón
+        boton.addEventListener('click', function () {
+            // Cuando se hace clic en el botón, muestra una alerta
+            alert("Mensaje:Respuesta al Botón");
+        });
+
+        function mostrarArrayEnAlert() {
+
+            for (let i = 0; i < arrayDeCadenas.length; i++) {
+                alert(arrayDeCadenas[i]);
+            }
+        }
+
+        function mostrarElementoPorIndice() {
+            const indiceInput = document.getElementById('indiceInput').value;
+            const indice = parseInt(indiceInput) - 1;
+
+            if (!isNaN(indice) && indice >= 0 && indice < arrayDeCadenas.length) {
+                alert(arrayDeCadenas[indice]);
+            } else {
+                alert("No existe el elemento");
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Impresión de Mensajes en JavaScript con document.writer</title>
+</head>
+
+<body>
+  <h1>Tema 0 Ejemplo 11- Impresión en Consola y en el Html</h1>
+  <p>Párrafo 1. Bienvenido a Generación TIC</p>
+  <p>Párrafo 2. Este es un ejemplo de impresión de contenido en el HTML</p>
+  <p>Párrafo 3. Muestra el uso de document.writer/p>
+  <p>Párrafo 4. Imprim un texto específico</p>
+  <p>Párrafo 5. Para restaurar el contenido, actualiza la página</p>
+
+
+  <input type="number" id="numeroParrafo" placeholder="Ingresa un número (1-5)">
+  <button id="imprimirParrafo">Imprimir Párrafo</button>
+
+  <script>
+    var parrafos = document.getElementsByTagName("p");
+    var numeroParrafoInput = document.getElementById("numeroParrafo");
+    var imprimirParrafoButton = document.getElementById("imprimirParrafo");
+
+    imprimirParrafoButton.addEventListener("click", function () {
+      var numeroParrafo = parseInt(numeroParrafoInput.value);
+
+      if (numeroParrafo >= 1 && numeroParrafo <= 5) {
+        var contenidoParrafo = parrafos[numeroParrafo - 1].textContent;
+        document.write("Contenido del Párrafo " + numeroParrafo + ": " + contenidoParrafo);
+      } else {
+        document.write("Número de párrafo no válido");
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T0 E02</title>
+</head>
+
+<body>
+    <h1><strong>Tema 0 Ejercicio 2:</strong><em>Comparación entre innerText y innerHTML</em></h1>
+    <h1>Descripción</h1>
+    <p><strong>textContent</strong> establece o recupera solo el texto plano dentro de un elemento, sin interpretar las
+        etiquetas HTML.<br>
+        Esto significa que cualquier contenido HTML en la cadena se tratará como texto y se mostrará tal como está.<br>
+        Se utiliza cuando deseas trabajar solo con el texto y no quieres que se interpreten las etiquetas HTML en el
+        contenido. </p>
+    <p><strong>innerHTML</strong> establece o recupera tanto el texto como el contenido HTML dentro de un elemento y
+        permite que las <br>
+        etiquetas HTML se interpreten y se representen como elementos HTML dentro del documento.<br>
+        Se utiliza cuando deseas manipular el contenido HTML de un elemento, como agregar, eliminar o modificar <br>
+        elementos HTML dentro de otro elemento.
+    </p>
+    <hr>
+    <h2><strong>Texto de ejemplo</strong></h2>
+    <p id="miElemento">Formato en <strong>Negrita</strong>, <em>Cursiva</em> y <u>Subrayado</u> </p>
+    <p>Haz clic en los botones y verás como cambia el estilo del texto de ejemplo</p>
+    <button onclick="usarInnerText()">Usar innerText</button>
+    <button onclick="usarInnerHTML()">Usar innerHTML</button>
+    <br>
+    <div id="resultado"></div>
+
+
+    <script>
+        function usarInnerText() {
+            var elemento = document.getElementById("miElemento");
+            var contenido = elemento.innerText;
+            document.getElementById("resultado").textContent = "innerText: " + contenido;
+        }
+
+        function usarInnerHTML() {
+            var elemento = document.getElementById("miElemento");
+            var contenido = elemento.innerHTML;
+            document.getElementById("resultado").innerHTML = "innerHTML: " + contenido;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Enlace al archivo CSS -->
+    <title>JS07 Cursos de Generación TIC</title>
+</head>
+<body>
+  <h1>Tema 1 Ejemplo 7</h1>
+  <div class="container">
+    <div class="cards-container">
+      <h1>Selecciona una opción:</h1>
+      <div class="card" onclick="mostrarCursos(1)">
+        <input type="radio" name="opcion" id="opcion1">
+        <label for="opcion1">
+          Curso para niñas y niños de 8 a 12 años
+          <img src="images/imagen1.png" alt="Imagen 1" class="card-image">
+        </label>
+      </div>
+
+      <div class="card" onclick="mostrarCursos(2)">
+        <input type="radio" name="opcion" id="opcion2">
+        <label for="opcion2">
+          Curso para jóvenes de Décimo a Once grado
+          <img src="images/imagen2.png" alt="Imagen 2" class="card-image">
+        </label>
+      </div>
+
+      <div class="card" onclick="mostrarCursos(3)">
+        <input type="radio" name="opcion" id="opcion3">
+        <label for="opcion3">
+          Opción 3: Curso para personas de 18 Años en adelante
+          <img src="images/imagen3.png" alt="Imagen 3" class="card-image">
+        </label>
+      </div>
+    </div>
+
+    <div id="cursosMostrados" class="cursos-container"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

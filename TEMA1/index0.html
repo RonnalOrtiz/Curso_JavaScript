@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navegación con Menú</title>
+  <style>
+    /* Estilos para el menú */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" onclick="navegarA('inicio')">Inicio</a>
+  <a href="#" onclick="navegarA('acerca')">Acerca</a>
+  <a href="#" onclick="navegarA('contacto')">Contacto</a>
+</nav>
+
+<div id="content">
+  <h1>Página de Inicio</h1>
+  <p>Bienvenido a Generación TIC</p>
+</div>
+
+<script>
+  function navegarA(page) {
+    // Oculta el contenido actual
+    document.getElementById('content').style.display = 'none';
+
+    // Mostrar contenido según la página seleccionada
+    var contentDiv = document.getElementById('content');
+    if (page === 'inicio') {
+      contentDiv.innerHTML = '<h1>Página de Inicio</h1><p>Bienvenido a nuestra página de inicio.</p>';
+    } else if (page === 'acerca') {
+      contentDiv.innerHTML = '<h1>Página Acerca</h1><p>Información sobre nosotros.</p>';
+    } else if (page === 'contacto') {
+      contentDiv.innerHTML = '<h1>Página de Contacto</h1><p>Puede contactarnos a través de...</p>';
+    }
+
+    // Mostrar el contenido actualizado
+    contentDiv.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
