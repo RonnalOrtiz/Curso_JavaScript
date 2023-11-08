@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llenado de Agua</title>
+</head>
+<body>
+    <h1>Llenado de Agua</h1>
+    <p id="mensaje">Esperando inicio del llenado...</p>
+    <p id="litros">Litros de agua: 0</p>
+
+    <script>
+        let litrosDeAgua = 0;
+
+        function llenarAgua() {
+            const mensaje = document.getElementById("mensaje");
+            const litros = document.getElementById("litros");
+
+            const intervalo = setInterval(function() {
+                if (litrosDeAgua <= 10) {
+                    mensaje.textContent = "Llenando...";
+                    litrosDeAgua++;
+                    litros.textContent = "Litros de agua: " + litrosDeAgua;
+                } else {
+                    mensaje.textContent = "Llenado. Cerrando el grifo.";
+                    clearInterval(intervalo);
+                }
+            }, 1000);
+        }
+
+        llenarAgua();
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llenado de Tanque</title>
+</head>
+<body>
+    <h1>Llenado de Tanque</h1>
+    <label for="capacidadMaxima">Capacidad Máxima del Tanque (litros):</label>
+    <input type="number" id="capacidadMaxima" placeholder="Ingrese la capacidad máxima"><br><br>
+
+    <p>Tanque: <span id="tanqueLlenado">0</span> litros</p>
+    <form id="llenarForm">
+        <label for="litros">Litros a agregar:</label>
+        <input type="number" id="litros" placeholder="Ingrese la cantidad de litros">
+        <button type="button" onclick="agregarLitros()">Agregar</button>
+    </form>
+
+    <script>
+        let tanqueLlenado = 0;
+        let capacidadMaxima = 10; // Valor predeterminado
+
+        function actualizarTanque() {
+            const tanqueSpan = document.getElementById("tanqueLlenado");
+            tanqueSpan.textContent = tanqueLlenado;
+        }
+
+        function agregarLitros() {
+            const litrosInput = document.getElementById("litros");
+            const litros = parseFloat(litrosInput.value);
+
+            if (!isNaN(litros)) {
+                if (tanqueLlenado < capacidadMaxima) {
+                    const espacioDisponible = capacidadMaxima - tanqueLlenado;
+                    if (litros > espacioDisponible) {
+                        alert("Es demasiado. Solo se pueden agregar " + espacioDisponible + " litros más.");
+                        tanqueLlenado = capacidadMaxima;
+                    } else {
+                        tanqueLlenado += litros;
+                    }
+                } else {
+                    alert("Tanque llenado. Capacidad máxima alcanzada.");
+                }
+                actualizarTanque();
+            } else {
+                alert("Por favor, ingrese una cantidad válida de litros.");
+            }
+
+            litrosInput.value = "";
+        }
+
+        function establecerCapacidadMaxima() {
+            const capacidadMaximaInput = document.getElementById("capacidadMaxima");
+            const nuevaCapacidad = parseFloat(capacidadMaximaInput.value);
+
+            if (!isNaN(nuevaCapacidad) && nuevaCapacidad > 0) {
+                capacidadMaxima = nuevaCapacidad;
+                tanqueLlenado = 0;
+                actualizarTanque();
+            } else {
+                alert("Por favor, ingrese una capacidad máxima válida mayor que 0.");
+            }
+
+            capacidadMaximaInput.value = "";
+        }
+
+        actualizarTanque();
+    </script>
+</body>
+</html>

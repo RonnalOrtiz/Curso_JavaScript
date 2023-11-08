@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+
+    <label for="valor1">Valor 1:</label>
+    <input type="text" id="valor1" placeholder="Ingrese el primer valor">
+
+    <label for="valor2">Valor 2:</label>
+    <input type="text" id="valor2" placeholder="Ingrese el segundo valor">
+
+    <button onclick="realizarOperacion('suma')">Suma</button>
+    <button onclick="realizarOperacion('resta')">Resta</button>
+    <button onclick="realizarOperacion('multiplicacion')">Multiplicación</button>
+    <button onclick="realizarOperacion('division')">División</button>
+    <button onclick="salir()">Salir</button>
+
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+        // Funciones para realizar las operaciones
+        function suma(a, b) {
+            return a + b;
+        }
+
+        function resta(a, b) {
+            return a - b;
+        }
+
+        function multiplicacion(a, b) {
+            return a * b;
+        }
+
+        function division(a, b) {
+            if (b === 0) {
+                return "No se puede dividir por cero";
+            }
+            return a / b;
+        }
+
+        // Función para mostrar el resultado
+        function mostrarResultado(resultado) {
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+        // Función para realizar la operación seleccionada
+        function realizarOperacion(operacion) {
+            const valor1 = parseFloat(document.getElementById('valor1').value);
+            const valor2 = parseFloat(document.getElementById('valor2').value);
+
+            if (!isNaN(valor1) && !isNaN(valor2)) {
+                let resultado;
+
+                switch (operacion) {
+                    case 'suma':
+                        resultado = suma(valor1, valor2);
+                        break;
+                    case 'resta':
+                        resultado = resta(valor1, valor2);
+                        break;
+                    case 'multiplicacion':
+                        resultado = multiplicacion(valor1, valor2);
+                        break;
+                    case 'division':
+                        resultado = division(valor1, valor2);
+                        break;
+                    default:
+                        resultado = "Operación no válida";
+                }
+
+                mostrarResultado(resultado);
+            } else {
+                mostrarResultado("Por favor, ingrese valores numéricos válidos.");
+            }
+        }
+
+        // Función para salir
+        function salir() {
+            mostrarResultado("");
+            document.getElementById('valor1').value = "";
+            document.getElementById('valor2').value = "";
+        }
+    </script>
+</body>
+</html>
